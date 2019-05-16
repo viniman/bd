@@ -1,0 +1,25 @@
+16/05:
+
+Fabricante (_CGC, Nome, Endereco)
+
+Produto (_Numero, NomeComercial, TipoEmbalagem, Quantitade, PrecoUnitario, -CGC)
+    CGC referencia Fabricante
+
+Medicamento (_-Numero, Tarja, Formula)
+    Numero referencia Produto
+
+Perfumaria (_-Numero, Tipo)
+    Numero referencia Produto
+
+Venda (Data, _NumeroNota, NomeCliente, CidadeCliente)
+
+PerfumariaVenda(_-numeroProd, _-NumeroNota, Quantidade, Imposto)
+    numeroProd referencia Perfumaria
+    NumeroNota referencia Venda
+
+ReceitaMedica (_CRM, _Numero, Data, NomeMedico)
+
+MedicamentoReceitaVenda(Quantidade, Imposto, _-Numero, _-NumeroNota, -CRM, -NumeroRM)
+    Numero referencia Medicamento
+    NumeroNota referencia Venda
+    NumeroRM referencia ReceitaMedica
